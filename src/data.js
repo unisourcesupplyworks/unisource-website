@@ -109,21 +109,6 @@ export const ESSENTIALS = [
   ['Tea bags', 2], ['Food plates', 3], ['A4 paper', 5], ['Blue pens', 3],
 ].map(([name, qty]) => ({ id: idOf(name), qty }));
 
-export const LOW_STOCK = [
-  { name: 'Tissues', days: 4, pct: 15 },
-  { name: 'Food plates', days: 5, pct: 20 },
-  { name: 'Filter coffee', days: 6, pct: 22 },
-  { name: 'Garbage bags', days: 7, pct: 25 },
-].map((x) => ({ ...x, id: idOf(x.name) }));
-
-export const ORDER_STEPS = [
-  { t: 'PO submitted', d: 'Sent to UniSupply', state: 'done' },
-  { t: 'PO accepted', d: 'Confirmed · GST invoice created', state: 'done' },
-  { t: 'Sourced and checked', d: 'Collected and quality checked', state: 'done' },
-  { t: 'Out for delivery', d: 'On its way to your office', state: 'now' },
-  { t: 'Delivered', d: 'Signed off by your team', state: 'next' },
-];
-
 export const WHY = [
   { icon: 'receipt', t: 'One PO, one GST invoice', d: 'Every category from one vendor.' },
   { icon: 'bell', t: 'Never run out', d: 'Low-stock alerts before shelves empty.' },
@@ -147,7 +132,6 @@ export const HOW = [
 export const NAV = [
   { href: '#categories', label: 'Categories' },
   { href: '#why', label: 'Why UniSupply' },
-  { href: '#app', label: 'The app' },
   { href: '#sectors', label: 'Who we serve' },
   { href: '#contact', label: 'Contact' },
 ];

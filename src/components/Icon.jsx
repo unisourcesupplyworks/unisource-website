@@ -6,7 +6,6 @@ const PATHS = {
   arrow: <path d="M5 12h14M13 6l6 6-6 6" />,
   check: <path d="M5 12l5 5 9-10" />,
   bell: <><path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4z" /><path d="M10 20a2 2 0 0 0 4 0" /></>,
-  chart: <path d="M4 20V10M10 20V4M16 20v-7M2 20h20" />,
   users: <><circle cx="9" cy="8" r="3" /><path d="M3 20a6 6 0 0 1 12 0" /><path d="M16 5a3 3 0 0 1 0 6M21 20a6 6 0 0 0-4-5.6" /></>,
   menu: <path d="M4 7h16M4 12h16M4 17h16" />,
   close: <path d="M6 6l12 12M18 6L6 18" />,

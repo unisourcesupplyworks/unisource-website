@@ -5,7 +5,6 @@ import Stats from './components/Stats.jsx';
 import QuickStart from './components/QuickStart.jsx';
 import Categories from './components/Categories.jsx';
 import Why from './components/Why.jsx';
-import AppShowcase from './components/AppShowcase.jsx';
 import Sectors from './components/Sectors.jsx';
 import HowItWorks from './components/HowItWorks.jsx';
 import CtaBand from './components/CtaBand.jsx';
@@ -105,7 +104,6 @@ export default function App() {
         <Categories onOpen={setCategory} />
         <QuickStart onAdd={(entries) => { addMany(entries, 'Added 8 essentials to your quote list'); setDrawerOpen(true); }} />
         <Why />
-        <AppShowcase onReorder={(entries) => addMany(entries, 'Added low-stock items to your quote list')} onGetApp={() => setAccessOpen(true)} />
         <Sectors onPick={pickSector} />
         <HowItWorks onStart={() => goTo('#categories')} />
         <CtaBand onGetApp={() => setAccessOpen(true)} />
