@@ -403,6 +403,8 @@ img, svg { flex: none; }
 .panel-head h2 { font-size: 22px; }
 .panel-head p { margin-top: 4px; }
 .panel-body { flex: 1; overflow-y: auto; padding: 14px 20px; display: flex; flex-direction: column; gap: 14px; }
+/* children keep their height; the body scrolls instead of squashing them (the chip row would collapse to 0) */
+.panel-body > * { flex-shrink: 0; }
 .panel-foot { padding: 14px 20px max(14px, env(safe-area-inset-bottom)); border-top: 1px solid var(--line); }
 .drawer-actions { display: flex; flex-direction: column; gap: 6px; }
 .search { display: flex; align-items: center; gap: 10px; border: 1px solid var(--line2); border-radius: var(--r-sm); padding: 0 12px; color: var(--mute); }
