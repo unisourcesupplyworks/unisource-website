@@ -446,12 +446,9 @@ img, svg { flex: none; }
 .float-chip span:last-child { display: flex; flex-direction: column; }
 .float-chip small { color: var(--mute); font-size: 12px; }
 .chip-a { left: -28px; bottom: 44px; }
-.chip-b { right: -18px; top: 26px; }
-.icon-tile-warn { background: var(--warn-t); color: var(--warn-ink); }
 @media (max-width: 900px) {
   .hero-visual { justify-self: center; }
   .chip-a { left: 8px; bottom: 12px; }
-  .chip-b { right: 8px; top: 12px; }
 }
 @media (max-width: 420px) { .float-chip { font-size: 13px; padding: 8px 10px 8px 8px; } .float-chip .icon-tile { width: 32px; height: 32px; } }
 

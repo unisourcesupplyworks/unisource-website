@@ -19,7 +19,6 @@ export default function Hero() {
         </div>
         <ul className="ticks">
           <li><Icon name="check" size={18} stroke={2.4} />GST invoice</li>
-          <li><Icon name="check" size={18} stroke={2.4} />Low-stock alerts</li>
           <li><Icon name="check" size={18} stroke={2.4} />Account manager</li>
         </ul>
       </div>
@@ -29,10 +28,6 @@ export default function Hero() {
         <div className="float-chip chip-a" aria-hidden="true">
           <span className="icon-tile"><Icon name="truck" size={18} /></span>
           <span><b>Out for delivery</b><small>Order · 8 items</small></span>
-        </div>
-        <div className="float-chip chip-b" aria-hidden="true">
-          <span className="icon-tile icon-tile-warn"><Icon name="bell" size={18} /></span>
-          <span><b>Tissues running low</b><small>4 days left</small></span>
         </div>
       </div>
     </section>
