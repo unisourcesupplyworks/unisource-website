@@ -19,6 +19,7 @@ export default function Hero() {
         </div>
         <ul className="ticks">
           <li><Icon name="check" size={18} stroke={2.4} />GST invoice</li>
+          <li><Icon name="check" size={18} stroke={2.4} />Low-stock alerts</li>
           <li><Icon name="check" size={18} stroke={2.4} />Account manager</li>
         </ul>
       </div>
