@@ -1,6 +1,6 @@
 import Visual from './Visual.jsx';
 
-export default function CtaBand({ onGetApp }) {
+export default function CtaBand() {
   return (
     <section className="section section-tight">
       <div className="container">
@@ -10,7 +10,6 @@ export default function CtaBand({ onGetApp }) {
             <p>Bulk pricing, one invoice, delivered across Bengaluru.</p>
             <div className="btn-row">
               <a href="#contact" className="btn btn-light btn-lg">Request a bulk quote</a>
-              <button type="button" className="btn btn-on-dark btn-lg" onClick={onGetApp}>Get the app</button>
             </div>
           </div>
           <div className="cta-art"><Visual name="Van" alt="UniSupply delivery van" /></div>

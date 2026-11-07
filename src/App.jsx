@@ -12,7 +12,6 @@ import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import CategoryModal from './components/CategoryModal.jsx';
 import QuoteDrawer from './components/QuoteDrawer.jsx';
-import AccessModal from './components/AccessModal.jsx';
 import Toast from './components/Toast.jsx';
 import { itemById } from './data.js';
 
@@ -30,7 +29,6 @@ export default function App() {
   const [quote, setQuote] = useState(loadQuote); // { [itemId]: qty }
   const [category, setCategory] = useState(null); // open category modal
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [accessOpen, setAccessOpen] = useState(false);
   const [sector, setSector] = useState('');
   const [toast, setToast] = useState('');
   const toastTimer = useRef();
@@ -97,7 +95,7 @@ export default function App() {
   return (
     <>
       <a className="skip" href="#main">Skip to content</a>
-      <Header count={count} onOpenQuote={() => setDrawerOpen(true)} onSignIn={() => setAccessOpen(true)} />
+      <Header count={count} onOpenQuote={() => setDrawerOpen(true)} />
       <main id="main">
         <Hero />
         <Stats />
@@ -106,7 +104,7 @@ export default function App() {
         <Why />
         <Sectors onPick={pickSector} />
         <HowItWorks onStart={() => goTo('#categories')} />
-        <CtaBand onGetApp={() => setAccessOpen(true)} />
+        <CtaBand />
         <Contact
           lines={lines}
           sector={sector}
@@ -134,7 +132,6 @@ export default function App() {
         onBrowse={() => { setDrawerOpen(false); goTo('#categories'); }}
         onContinue={() => { setDrawerOpen(false); goTo('#contact'); }}
       />
-      <AccessModal open={accessOpen} onClose={() => setAccessOpen(false)} />
       <Toast message={toast} />
     </>
   );

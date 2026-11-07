@@ -3,7 +3,7 @@ import Icon from './Icon.jsx';
 import Logo from './Logo.jsx';
 import { NAV } from '../data.js';
 
-export default function Header({ count, onOpenQuote, onSignIn }) {
+export default function Header({ count, onOpenQuote }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -40,7 +40,6 @@ export default function Header({ count, onOpenQuote, onSignIn }) {
             <Icon name="list" />
             {count > 0 && <span className="badge-count">{count}</span>}
           </button>
-          <button type="button" className="btn btn-ghost hide-sm" onClick={onSignIn}>Sign in</button>
           <a href="#contact" className="btn btn-primary hide-xs">Request a quote</a>
           <button
             type="button"
@@ -61,7 +60,6 @@ export default function Header({ count, onOpenQuote, onSignIn }) {
             <a key={n.href} href={n.href} onClick={close}>{n.label}</a>
           ))}
           <div className="mobile-menu-cta">
-            <button type="button" className="btn btn-ghost" onClick={() => { close(); onSignIn(); }}>Sign in</button>
             <a href="#contact" className="btn btn-primary" onClick={close}>Request a quote</a>
           </div>
         </div>
