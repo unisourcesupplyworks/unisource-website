@@ -3,11 +3,10 @@ export const CONTACT = {
   city: 'Bengaluru',
   address: '17th A Cross, Tower 1, Wilson Garden, Bengaluru – 560030',
   phones: [
-    { label: '+91 97420 02476', raw: '+919742002476' },
-    { label: '+91 85537 75736', raw: '+918553775736' },
+    { label: '+91 95359 07815', raw: '+919535907815' },
   ],
-  whatsapp: '919742002476', // number used for WhatsApp quote requests
-  email: 'unisource.supplyworks@gmail.com',
+  whatsapp: '919535907815', // number used for WhatsApp quote requests
+  email: 'info@unisupply.in',
   minOrder: '₹7,500',
 };
 
@@ -130,8 +129,8 @@ export const HOW = [
 ];
 
 export const NAV = [
-  { href: '#categories', label: 'Categories' },
-  { href: '#why', label: 'Why UniSupply' },
-  { href: '#sectors', label: 'Who we serve' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#categories', label: 'Categories', icon: 'grid', hint: 'Pantry, stationery, housekeeping, gifting' },
+  { href: '#why', label: 'Why UniSupply', icon: 'check', hint: 'One vendor, one invoice' },
+  { href: '#sectors', label: 'Who we serve', icon: 'building', hint: 'Offices, coworking, cafés, campuses' },
+  { href: '#contact', label: 'Contact', icon: 'phone', hint: 'Bulk quotes, same-day reply' },
 ];
