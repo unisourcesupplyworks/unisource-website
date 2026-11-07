@@ -7,13 +7,13 @@ export default function Footer({ onOpenCategory }) {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <a href="#top" aria-label="UniSource home"><Logo tagline={false} dark /></a>
+            <a href="#top" aria-label="UniSupply home"><Logo tagline={false} dark /></a>
             <p>B2B office supply for corporate offices, coworking spaces, hospitality and campuses in {CONTACT.city}.</p>
           </div>
           <nav aria-label="Company">
             <b>Company</b>
             <a href="#top">Home</a>
-            <a href="#why">Why UniSource</a>
+            <a href="#why">Why UniSupply</a>
             <a href="#app">The app</a>
             <a href="#sectors">Who we serve</a>
             <a href="#contact">Contact</a>
@@ -33,7 +33,7 @@ export default function Footer({ onOpenCategory }) {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} UniSource. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} UniSupply. All rights reserved.</span>
           <span>Brand names referenced belong to their respective owners. Availability and pricing are confirmed at the time of order.</span>
         </div>
       </div>

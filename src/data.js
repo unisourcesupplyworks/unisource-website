@@ -117,7 +117,7 @@ export const LOW_STOCK = [
 ].map((x) => ({ ...x, id: idOf(x.name) }));
 
 export const ORDER_STEPS = [
-  { t: 'PO submitted', d: 'Sent to UniSource', state: 'done' },
+  { t: 'PO submitted', d: 'Sent to UniSupply', state: 'done' },
   { t: 'PO accepted', d: 'Confirmed · GST invoice created', state: 'done' },
   { t: 'Sourced and checked', d: 'Collected and quality checked', state: 'done' },
   { t: 'Out for delivery', d: 'On its way to your office', state: 'now' },
@@ -146,7 +146,7 @@ export const HOW = [
 
 export const NAV = [
   { href: '#categories', label: 'Categories' },
-  { href: '#why', label: 'Why UniSource' },
+  { href: '#why', label: 'Why UniSupply' },
   { href: '#app', label: 'The app' },
   { href: '#sectors', label: 'Who we serve' },
   { href: '#contact', label: 'Contact' },

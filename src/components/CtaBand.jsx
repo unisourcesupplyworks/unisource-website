@@ -13,7 +13,7 @@ export default function CtaBand({ onGetApp }) {
               <button type="button" className="btn btn-on-dark btn-lg" onClick={onGetApp}>Get the app</button>
             </div>
           </div>
-          <div className="cta-art"><Visual name="Van" alt="UniSource delivery van" /></div>
+          <div className="cta-art"><Visual name="Van" alt="UniSupply delivery van" /></div>
         </div>
       </div>
     </section>

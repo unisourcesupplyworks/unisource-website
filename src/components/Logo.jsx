@@ -3,7 +3,7 @@ export default function Logo({ tagline = true, dark = false }) {
     <span className={`logo${dark ? ' logo-dark' : ''}`}>
       <span className="logo-mark" aria-hidden="true">U</span>
       <span className="logo-text">
-        <b>UniSource</b>
+        <b>UniSupply</b>
         {tagline && <small>Office supplies, one vendor</small>}
       </span>
     </span>

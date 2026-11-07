@@ -25,7 +25,7 @@ export default function Header({ count, onOpenQuote, onSignIn }) {
   return (
     <header className={`header${scrolled ? ' scrolled' : ''}`}>
       <nav className="container nav" aria-label="Main">
-        <a href="#top" className="brand" onClick={close} aria-label="UniSource home">
+        <a href="#top" className="brand" onClick={close} aria-label="UniSupply home">
           <Logo />
         </a>
 

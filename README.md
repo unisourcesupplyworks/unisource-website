@@ -1,6 +1,6 @@
-# UniSource website
+# UniSupply website
 
-Static marketing site for UniSource, built with React and Vite. It uses the same colour theme as the UniSource app.
+Static marketing site for UniSupply, built with React and Vite. It uses the same colour theme as the UniSupply app.
 
 ## Run it locally
 

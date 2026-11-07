@@ -5,7 +5,7 @@ export default function Why() {
   return (
     <section id="why" className="section section-tight-top">
       <div className="container">
-        <h2 className="visually-hidden">Why UniSource</h2>
+        <h2 className="visually-hidden">Why UniSupply</h2>
         <ul className="why-strip">
           {WHY.map((w) => (
             <li key={w.t}>

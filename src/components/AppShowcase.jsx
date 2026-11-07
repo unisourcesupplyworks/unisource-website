@@ -13,7 +13,7 @@ export default function AppShowcase({ onReorder, onGetApp }) {
     <section id="app" className="section section-white">
       <div className="container split">
         <div className="split-copy">
-          <span className="eyebrow eyebrow-plain">The UniSource app</span>
+          <span className="eyebrow eyebrow-plain">The UniSupply app</span>
           <h2>Stock, usage and orders in one place.</h2>
           <ul className="feature-chips">
             {FEATURES.map((f) => (

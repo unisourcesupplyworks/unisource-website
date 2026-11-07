@@ -24,7 +24,7 @@ export default function Contact({ lines, sector, setSector, onEditList, onBrowse
 
   const message = () =>
     buildMessage({
-      intro: 'Hello UniSource, I would like a bulk quote.',
+      intro: 'Hello UniSupply, I would like a bulk quote.',
       fields: [['Name', f.name], ['Company', f.company], ['Phone', f.phone], ['Email', f.email], ['Type of space', sector]],
       lines,
       notes: f.notes,

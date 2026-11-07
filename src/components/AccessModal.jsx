@@ -20,7 +20,7 @@ export default function AccessModal({ open, onClose }) {
     setErr('');
     const url = whatsappUrl(
       buildMessage({
-        intro: 'Hello UniSource, I would like access to the UniSource app for my office.',
+        intro: 'Hello UniSupply, I would like access to the UniSupply app for my office.',
         fields: [['Name', f.name], ['Company', f.company], ['Phone', f.phone]],
       })
     );
@@ -29,7 +29,7 @@ export default function AccessModal({ open, onClose }) {
   };
 
   return (
-    <Modal open={open} onClose={onClose} title="Get UniSource app access" subtitle="Accounts are set up by your account manager for your office.">
+    <Modal open={open} onClose={onClose} title="Get UniSupply app access" subtitle="Accounts are set up by your account manager for your office.">
       <form className="access-form" onSubmit={submit} noValidate>
         <ul className="ticks ticks-col">
           <li><Icon name="check" size={18} stroke={2.4} />Order and reorder across all four categories</li>

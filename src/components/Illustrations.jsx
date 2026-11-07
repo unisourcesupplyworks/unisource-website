@@ -1,4 +1,4 @@
-// Flat illustrations drawn in the UniSource palette. Colours come from the
+// Flat illustrations drawn in the UniSupply palette. Colours come from the
 // --il-* tokens in styles.css, so they follow light and dark mode.
 
 const Svg = ({ w = 320, h = 200, label, children }) => (
@@ -295,7 +295,7 @@ export function HeroShelf() {
 
 export function Van() {
   return (
-    <Svg w={300} h={170} label="UniSource delivery van">
+    <Svg w={300} h={170} label="UniSupply delivery van">
       <ellipse cx="150" cy="156" rx="132" ry="9" fill="#000" opacity=".15" />
       <path d="M20 46a10 10 0 0 1 10-10h150v108H20z" className="il-white" />
       <path d="M180 60h56a14 14 0 0 1 12 7l26 40a14 14 0 0 1 2 8v29H180z" className="il-white" />
