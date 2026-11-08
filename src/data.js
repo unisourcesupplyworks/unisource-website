@@ -132,5 +132,5 @@ export const NAV = [
   { href: '#categories', label: 'Categories', icon: 'grid', hint: 'Pantry, stationery, housekeeping, gifting' },
   { href: '#why', label: 'Why UniSupply', icon: 'check', hint: 'One vendor, one invoice' },
   { href: '#sectors', label: 'Who we serve', icon: 'building', hint: 'Offices, coworking, cafés, campuses' },
-  { href: '#contact', label: 'Contact', icon: 'chat', hint: 'Bulk quotes, same-day reply' },
+  { href: '#contact', label: 'Contact', icon: 'chat', hint: 'Call, email or WhatsApp us' },
 ];

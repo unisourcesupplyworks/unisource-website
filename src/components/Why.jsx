@@ -1,11 +1,12 @@
 import Icon from './Icon.jsx';
+import SectionHead from './SectionHead.jsx';
 import { WHY } from '../data.js';
 
 export default function Why() {
   return (
-    <section id="why" className="section section-tight-top">
+    <section id="why" className="section">
       <div className="container">
-        <h2 className="visually-hidden">Why UniSupply</h2>
+        <SectionHead eyebrow="Why UniSupply" title="One vendor. Fewer follow-ups." />
         <ul className="why-strip">
           {WHY.map((w) => (
             <li key={w.t}>

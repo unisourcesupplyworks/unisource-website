@@ -7,7 +7,7 @@ export default function Footer({ onOpenCategory }) {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <a href="#top" aria-label="UniSupply home"><Logo tagline={false} dark /></a>
+            <a href="#top" aria-label="UniSupply home"><Logo dark /></a>
             <p>B2B office supply for corporate offices, coworking spaces, hospitality and campuses in {CONTACT.city}.</p>
           </div>
           <nav aria-label="Company">

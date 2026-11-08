@@ -26,7 +26,7 @@ function useActiveSection(ids) {
 
 const SECTION_IDS = NAV.map((n) => n.href.slice(1));
 
-export default function Header({ count, onOpenQuote }) {
+export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const active = useActiveSection(SECTION_IDS);
@@ -86,12 +86,7 @@ export default function Header({ count, onOpenQuote }) {
         </ul>
 
         <div className="nav-actions">
-          <button type="button" className="quote-btn" onClick={onOpenQuote} aria-label={`Quote list, ${count} ${count === 1 ? 'item' : 'items'}`}>
-            <Icon name="list" />
-            <span className="quote-btn-label">Quote list</span>
-            {count > 0 && <span className="badge-count">{count}</span>}
-          </button>
-          <a href="#contact" className="btn btn-primary nav-cta">Get a quote</a>
+          <a href="#quote" className="btn btn-primary nav-cta">Request For Quote</a>
           <button
             ref={menuBtn}
             type="button"
@@ -124,7 +119,7 @@ export default function Header({ count, onOpenQuote }) {
             ))}
           </ul>
           <div className="mobile-menu-cta">
-            <a href="#contact" className="btn btn-primary btn-lg" onClick={close}>Request a quote</a>
+            <a href="#quote" className="btn btn-primary btn-lg" onClick={close}>Request For Quote</a>
             <a href={`https://wa.me/${CONTACT.whatsapp}`} className="btn btn-outline" target="_blank" rel="noopener noreferrer">
               <Icon name="chat" size={18} />WhatsApp us
             </a>

@@ -2,12 +2,12 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import Stats from './components/Stats.jsx';
-import QuickStart from './components/QuickStart.jsx';
 import Categories from './components/Categories.jsx';
 import Why from './components/Why.jsx';
 import Sectors from './components/Sectors.jsx';
 import HowItWorks from './components/HowItWorks.jsx';
 import CtaBand from './components/CtaBand.jsx';
+import QuoteForm from './components/QuoteForm.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import CategoryModal from './components/CategoryModal.jsx';
@@ -79,40 +79,35 @@ export default function App() {
         .filter((l) => l.item),
     [quote]
   );
-  const count = lines.length;
 
   const goTo = useCallback((hash) => {
     const el = document.querySelector(hash);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, []);
 
-  const pickSector = (name) => {
-    setSector(name);
-    goTo('#contact');
-    notify(`Selected: ${name}`);
-  };
-
   return (
     <>
       <a className="skip" href="#main">Skip to content</a>
-      <Header count={count} onOpenQuote={() => setDrawerOpen(true)} />
+      <Header />
       <main id="main">
         <Hero />
         <Stats />
         <Categories onOpen={setCategory} />
-        <QuickStart onAdd={(entries) => { addMany(entries, 'Added 8 essentials to your quote list'); setDrawerOpen(true); }} />
         <Why />
-        <Sectors onPick={pickSector} />
+        <Sectors />
         <HowItWorks onStart={() => goTo('#categories')} />
         <CtaBand />
-        <Contact
+        <QuoteForm
           lines={lines}
+          setQty={setQty}
+          clear={clear}
           sector={sector}
           setSector={setSector}
-          onEditList={() => setDrawerOpen(true)}
           onBrowse={() => goTo('#categories')}
+          onAddEssentials={(entries) => addMany(entries, `Added ${entries.length} essentials to your quote list`)}
           notify={notify}
         />
+        <Contact />
       </main>
       <Footer onOpenCategory={setCategory} />
 
@@ -130,7 +125,7 @@ export default function App() {
         setQty={setQty}
         clear={clear}
         onBrowse={() => { setDrawerOpen(false); goTo('#categories'); }}
-        onContinue={() => { setDrawerOpen(false); goTo('#contact'); }}
+        onContinue={() => { setDrawerOpen(false); goTo('#quote'); }}
       />
       <Toast message={toast} />
     </>
