@@ -194,13 +194,16 @@ img, svg { flex: none; }
 .header.menu-open { background: var(--surf); border-bottom-color: var(--line); }
 .nav { display: flex; align-items: center; gap: 16px; height: 72px; }
 .brand { color: inherit; flex: none; border-radius: 12px; }
-.logo { display: inline-flex; align-items: center; gap: 10px; }
-.logo-mark { width: 36px; height: 36px; border-radius: 11px; background: #FFFFFF; box-shadow: inset 0 0 0 1px var(--line2); display: grid; place-items: center; overflow: hidden; }
-.logo-mark img { width: 30px; height: 30px; display: block; }
-.logo-text { display: flex; flex-direction: column; line-height: 1.1; }
-.logo-text b { font-size: 18px; color: var(--pri); }
-.logo-dark .logo-mark { box-shadow: none; }
-.logo-dark .logo-text b { color: #FFFFFF; }
+/* logo artwork is 1040x160: icon is the first 262px, lettering the remaining 778px */
+.logo { --logo-h: 32px; display: inline-flex; align-items: center; height: var(--logo-h); }
+.logo-mark { width: calc(var(--logo-h) * 262 / 160); height: 100%; overflow: hidden; flex: none; }
+.logo-mark img { height: 100%; width: auto; max-width: none; display: block; }
+.logo-word {
+  width: calc(var(--logo-h) * 778 / 160); height: 100%; flex: none; background-color: var(--pri);
+  -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+}
+.logo-dark .logo-word { background-color: #4FB58F; } /* footer is always dark: use the light-on-dark green */
+@media (max-width: 380px) { .logo { --logo-h: 26px; } }
 
 /* desktop links: a soft pill bar, the section in view is raised */
 .nav-links { display: flex; gap: 2px; margin: 0 auto; }
