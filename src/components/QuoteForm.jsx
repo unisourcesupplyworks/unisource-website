@@ -9,11 +9,47 @@ const EMPTY = { name: '', company: '', phone: '', email: '', notes: '' };
 const CAT_ICON = Object.fromEntries(CATEGORIES.map((c) => [c.id, c.icon]));
 const plural = (n, word) => `${n} ${word}${n === 1 ? '' : 's'}`;
 
+// Phone: exactly 10 digits, numbers only.
+const PHONE_DIGITS = 10;
+const phoneError = (p) => {
+  if (!p) return 'Please enter your phone number.';
+  if (p.length > PHONE_DIGITS) return `Phone number can't be more than ${PHONE_DIGITS} digits.`;
+  if (p.length < PHONE_DIGITS) return `Phone number must be ${PHONE_DIGITS} digits.`;
+  return '';
+};
+
+// Email (optional): name@domain.tld, no spaces, no consecutive or edge dots.
+const EMAIL_RE = /^[A-Za-z0-9](?:[A-Za-z0-9._%+-]*[A-Za-z0-9_%+-])?@[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?)*\.[A-Za-z]{2,}$/;
+const emailError = (v) => {
+  const s = v.trim();
+  if (!s) return '';
+  if (s.length > 254 || s.includes('..') || !EMAIL_RE.test(s)) return 'Please enter a valid email, e.g. name@company.com.';
+  return '';
+};
+
 export default function QuoteForm({ lines, setQty, clear, sector, setSector, onBrowse, onAddEssentials, notify }) {
   const [f, setF] = useState(EMPTY);
   const [errors, setErrors] = useState({});
   const [pending, setPending] = useState(null);
   const upd = (k) => (e) => setF((s) => ({ ...s, [k]: e.target.value }));
+  const setError = (k, msg) => setErrors((s) => ({ ...s, [k]: msg || undefined }));
+
+  // Keep only digits. Spaces, dashes and a leading +91 are dropped quietly;
+  // letters or other symbols are rejected with an error.
+  const onPhone = (e) => {
+    const cleaned = e.target.value.replace(/[\s-]/g, '').replace(/^\+91/, '');
+    const digits = cleaned.replace(/\D/g, '');
+    setF((s) => ({ ...s, phone: digits }));
+    if (/\D/.test(cleaned)) setError('phone', 'Only numbers are allowed in the phone number.');
+    else if (digits.length > PHONE_DIGITS) setError('phone', phoneError(digits));
+    else setError('phone', '');
+  };
+
+  const onEmail = (e) => {
+    const v = e.target.value.replace(/\s/g, '');
+    setF((s) => ({ ...s, email: v }));
+    if (errors.email) setError('email', emailError(v)); // clear the error as soon as it's fixed
+  };
 
   const count = lines.length;
   const units = lines.reduce((n, l) => n + l.qty, 0);
@@ -21,8 +57,10 @@ export default function QuoteForm({ lines, setQty, clear, sector, setSector, onB
   const validate = () => {
     const e = {};
     if (!f.name.trim()) e.name = 'Please enter your name.';
-    if (!/^[+\d][\d\s-]{7,}$/.test(f.phone.trim())) e.phone = 'Please enter a valid phone number.';
-    if (f.email && !/^\S+@\S+\.\S+$/.test(f.email)) e.email = 'Please enter a valid email.';
+    const pe = phoneError(f.phone);
+    if (pe) e.phone = pe;
+    const ee = emailError(f.email);
+    if (ee) e.email = ee;
     if (!count && !f.notes.trim()) e.notes = 'Add items to your quote list, or tell us what you need.';
     setErrors(e);
     return !Object.keys(e).length;
@@ -31,7 +69,7 @@ export default function QuoteForm({ lines, setQty, clear, sector, setSector, onB
   const message = () =>
     buildMessage({
       intro: 'Hello UniSupply, I would like a bulk quote.',
-      fields: [['Name', f.name], ['Company', f.company], ['Phone', f.phone], ['Email', f.email], ['Type of space', sector]],
+      fields: [['Name', f.name], ['Company', f.company], ['Phone', `+91 ${f.phone}`], ['Email', f.email], ['Type of space', sector]],
       lines,
       notes: f.notes,
     });
@@ -126,16 +164,35 @@ export default function QuoteForm({ lines, setQty, clear, sector, setSector, onB
           <form className="form-card" id="rfq" noValidate onSubmit={send('wa')}>
             <div className="form-grid">
               <Field label="Your name *" error={errors.name}>
-                <input value={f.name} onChange={upd('name')} autoComplete="name" />
+                <input value={f.name} onChange={upd('name')} autoComplete="name" placeholder="Full name" />
               </Field>
               <Field label="Company">
-                <input value={f.company} onChange={upd('company')} autoComplete="organization" />
+                <input value={f.company} onChange={upd('company')} autoComplete="organization" placeholder="Company name" />
               </Field>
               <Field label="Phone *" error={errors.phone}>
-                <input type="tel" value={f.phone} onChange={upd('phone')} autoComplete="tel" placeholder="+91" />
+                <input
+                  type="tel"
+                  inputMode="numeric"
+                  value={f.phone}
+                  onChange={onPhone}
+                  onBlur={() => f.phone && setError('phone', phoneError(f.phone))}
+                  autoComplete="tel-national"
+                  placeholder="10-digit mobile number"
+                  aria-invalid={!!errors.phone}
+                />
               </Field>
               <Field label="Email" error={errors.email}>
-                <input type="email" value={f.email} onChange={upd('email')} autoComplete="email" />
+                <input
+                  type="email"
+                  inputMode="email"
+                  value={f.email}
+                  onChange={onEmail}
+                  onBlur={() => setError('email', emailError(f.email))}
+                  autoComplete="email"
+                  placeholder="name@company.com"
+                  maxLength={254}
+                  aria-invalid={!!errors.email}
+                />
               </Field>
               <Field label="Type of space" wide>
                 <select value={sector} onChange={(e) => setSector(e.target.value)}>

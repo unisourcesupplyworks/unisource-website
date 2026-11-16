@@ -1,12 +1,12 @@
 // ─── Business details — edit here and the whole site updates ───────────
 export const CONTACT = {
   city: 'Bengaluru',
-  address: '17th A Cross, Tower 1, Wilson Garden, Bengaluru – 560030',
+  address: 'Lakkasandra, Bengaluru – 560030',
   phones: [
     { label: '+91 95359 07815', raw: '+919535907815' },
   ],
   whatsapp: '919535907815', // number used for WhatsApp quote requests
-  email: 'info@unisupply.in',
+  email: 'sales@unisupply.in',
   minOrder: '₹7,500',
 };
 

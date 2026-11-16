@@ -305,12 +305,12 @@ img, svg { flex: none; }
 
 /* ─── Sections & grids ─────────────────────────────────────────────── */
 .section { padding: 88px 0; }
-.section-tight { padding: 0 0 88px; }
+.section-tight { padding: 72px 0 88px; }
 .section-white { background: var(--surf); }
 .section-head { display: flex; flex-direction: column; gap: 10px; max-width: 660px; margin-bottom: 36px; }
 .section-head h2 { font-size: clamp(28px, 3.6vw, 40px); }
 .section-head .lead { font-size: 17px; }
-@media (max-width: 640px) { .section { padding: 60px 0; } .section-tight { padding-bottom: 60px; } }
+@media (max-width: 640px) { .section { padding: 60px 0; } .section-tight { padding: 48px 0 60px; } }
 
 .grid { display: grid; gap: 16px; }
 .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
