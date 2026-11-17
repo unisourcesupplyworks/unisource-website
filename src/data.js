@@ -8,7 +8,20 @@ export const CONTACT = {
   whatsapp: '919535907815', // number used for WhatsApp quote requests
   email: 'sales@unisupply.in',
   minOrder: '₹7,500',
+  replyTime: '24 hours', // how quickly supply partners hear back
 };
+
+// Pre-filled WhatsApp / email text for suppliers who want to partner with us.
+export const PARTNER_MESSAGE = [
+  'Hello UniSupply, we would like to become a supply partner.',
+  '',
+  'Company:',
+  'Brands we carry:',
+  'Categories:',
+  'Areas we cover:',
+  '',
+  'We will share our price list.',
+].join('\n');
 
 // ─── Your own photos (optional) ─────────────────────────────────────
 // Put image files in public/images/ and set the path, e.g. pantry: 'images/pantry.jpg'.

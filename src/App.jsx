@@ -8,6 +8,7 @@ import Sectors from './components/Sectors.jsx';
 import HowItWorks from './components/HowItWorks.jsx';
 import CtaBand from './components/CtaBand.jsx';
 import QuoteForm from './components/QuoteForm.jsx';
+import Partners from './components/Partners.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import CategoryModal from './components/CategoryModal.jsx';
@@ -107,6 +108,7 @@ export default function App() {
           onAddEssentials={(entries) => addMany(entries, `Added ${entries.length} essentials to your quote list`)}
           notify={notify}
         />
+        <Partners />
         <Contact />
       </main>
       <Footer onOpenCategory={setCategory} />

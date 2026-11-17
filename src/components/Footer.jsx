@@ -15,6 +15,7 @@ export default function Footer({ onOpenCategory }) {
             <a href="#top">Home</a>
             <a href="#why">Why UniSupply</a>
             <a href="#sectors">Who we serve</a>
+            <a href="#partners">Supply Partners</a>
             <a href="#contact">Contact</a>
           </nav>
           <nav aria-label="Categories">
